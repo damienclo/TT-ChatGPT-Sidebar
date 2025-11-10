@@ -31,7 +31,6 @@ Dans une conversation, la colonne “Mes questions” apparaît automatiquement 
 Cliquez :
 Sur 🧑 pour scroller vers votre question.
 Sur 🤖 pour aller directement à la réponse.
-Sur ✏️ pour modifier votre message.
 Passez la souris sur une question pour voir son contenu complet.
 
 🔧 Structure du projet
