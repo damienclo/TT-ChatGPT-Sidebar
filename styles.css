@@ -1,0 +1,33 @@
+/* largeur via variable */
+:root { --cq-width: 280px; }
+/* sidebar */
+#cq-sidebar { position: fixed; top: 0; right: 0; height: 100vh; width: var(--cq-width); box-shadow: -8px 0 20px rgba(0,0,0,.08); background: #0f0f14; color: #eee; z-index: 999999; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; display: flex; flex-direction: column; border-left: 1px solid rgba(255,255,255,.08); }
+/* resizer */
+#cq-resizer { position:absolute; left:0; top:0; width:6px; height:100%; cursor: ew-resize; background: transparent; }
+body.cq-resizing #cq-resizer { background: rgba(255,255,255,.08); }
+/* header */
+#cq-header { display:flex; align-items:center; justify-content:space-between; padding:10px 12px; border-bottom:1px solid rgba(255,255,255,.08); font-weight:600; font-size:13px; letter-spacing:.2px; }
+#cq-toggle { cursor:pointer; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.04); border-radius:6px; padding:6px 8px; color:#ddd; font-size:12px; }
+/* list */
+#cq-list { overflow-y:auto; padding:8px 8px 12px 10px; display:flex; flex-direction:column; gap:6px; }
+.cq-item { border-radius:8px; padding:0; }
+.cq-item.active .cq-textbtn { border-color:#6aa3ff; box-shadow:0 0 0 2px rgba(106,163,255,.18) inset; }
+/* row */
+.cq-row { display:flex; align-items:center; gap:6px; }
+/* texte aligné gauche, 1 ligne */
+.cq-textbtn { flex:1; text-align:left; background:transparent; color:#e6e6e6; border:1px solid rgba(255,255,255,.1); border-radius:8px; padding:6px 8px; font-size:12px; line-height:1.25; cursor:pointer; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; display:flex; align-items:center; gap:6px; }
+/* icône avant texte */
+.cq-icon { opacity:.9; }
+/* boutons */
+.cq-edit, .cq-reply { cursor:pointer; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.06); border-radius:6px; padding:4px 6px; font-size:12px; line-height:1; color:#e6e6e6; }
+.cq-edit:hover, .cq-reply:hover { background:rgba(255,255,255,.1); }
+.cq-disabled { opacity:.5; cursor:default; }
+/* body margin selon largeur */
+body.cq-has-sidebar { margin-right: var(--cq-width) !important; transition: margin-right .15s; }
+#cq-sidebar.cq-collapsed { width:44px; }
+body.cq-has-sidebar.cq-collapsed { margin-right:44px !important; }
+/* surlignage */
+.cq-highlight { animation: cqflash 1.6s ease-out 1; }
+@keyframes cqflash { 0%{box-shadow:0 0 0 0 rgba(106,163,255,0);} 25%{box-shadow:0 0 0 4px rgba(106,163,255,.35);} 100%{box-shadow:0 0 0 0 rgba(106,163,255,0);} }
+/* aperçu survol */
+#cq-preview { position:absolute; max-width: calc(var(--cq-width) - 16px); background:#1a1a22; color:#eee; padding:8px 10px; border:1px solid rgba(255,255,255,.12); border-radius:8px; font-size:12px; line-height:1.35; box-shadow:0 6px 16px rgba(0,0,0,.35); pointer-events:none; }
